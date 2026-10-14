@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Employee Management API",
+    "_postman_id": "f58f06c3-92f7-4bc8-b9f7-employee-management",
+    "description": "CRUD requests for the Employee Management System. Run backend before sending requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Get all employees",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/employees"
+      }
+    },
+    {
+      "name": "Get employee by ID (replace 1)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/employees/1"
+      }
+    },
+    {
+      "name": "Create employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul Sharma\",\n  \"email\": \"rahul@example.com\",\n  \"department\": \"IT\",\n  \"salary\": 35000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/employees"
+      }
+    },
+    {
+      "name": "Update employee (replace 1)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul Verma\",\n  \"email\": \"rahul@example.com\",\n  \"department\": \"Engineering\",\n  \"salary\": 40000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/employees/1"
+      }
+    },
+    {
+      "name": "Delete employee (replace 1)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/employees/1"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api"
+    }
+  ]
+}

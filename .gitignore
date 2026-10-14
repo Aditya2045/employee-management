@@ -1,0 +1,15 @@
+# Java / Maven
+target/
+*.class
+.idea/
+*.iml
+*.log
+
+# Frontend
+node_modules/
+frontend/dist/
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
